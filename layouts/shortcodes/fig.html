@@ -1,0 +1,37 @@
+<!-- default image location is as page bundle -->
+{{ $ihost := "" }}
+
+<!-- check that figbase is set in frontmatter, either for static/ or a cdn -->
+{{ if isset .Page.Params "figbase" }}
+  {{ $ihost = $.Page.Params.figbase }}
+{{ end }}
+
+{{ $imgslug:= urls.Parse (.Get "src") }}
+{{ $ipath := printf "%s%s" $ihost $imgslug }}
+
+{{ $altText := .Get "cap" }}
+{{ $caption := .Get "cap" }}
+
+{{ $class := default "mx-auto my-0 rounded-md" (.Get "class") }}
+
+{{ $file := $imgslug.Path }}
+{{ $img := .Page.Resources.GetMatch $file }}
+{{- if and (not $img) .Page.File }}
+  {{ $path := path.Join .Page.File.Dir $file }}
+  {{ $img = resources.Get $path }}
+{{ end -}}
+
+<!-- prettier-ignore -->
+<figure{{ with $class }} class="{{ . }} figmarg"{{ end }}>
+  {{- with $img -}}
+    {{ $lazy := $.Page.Site.Params.enableImageLazyLoading | default true }}
+    {{ $webp := $.Page.Site.Params.enableImageWebp | default true }}
+    {{ partial "picture.html" (dict "img" . "alt" $altText "class" $class "lazy" $lazy "webp" $webp) }}
+  {{- else -}}
+    <img src="{{ $ipath }}" alt="{{ $altText }}" class="{{ $class }}"/>
+  {{- end -}}
+
+  {{ with $caption }}<figcaption class="text-center">{{ . | markdownify }}
+  <br>View full-size in:&nbsp;&nbsp;<strong>A)</strong> <a target="_blank" href="{{ $ipath }}">new window</a> or <strong>B)</strong> <a href="{{ $ipath }}">same window</a>
+  </figcaption>{{ end }}
+</figure>

@@ -1,0 +1,13 @@
+# from Venteto Hugo Congo Module
+# to override:
+#   - set enableRobotsTXT: false in site config
+#   - put a custom robots.txt in staticDir
+# ------------------------------------------------------------------------------
+# block all agents that obey robots.txt:
+User-agent: *
+Disallow: /
+# ------------------------------------------------------------------------------
+#                       from Congo upstream:
+# User-agent: *
+# Allow: /
+# Sitemap: {{ "sitemap.xml" | absURL }}

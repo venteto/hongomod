@@ -1,0 +1,8 @@
+/* Increase the default font size */
+html {
+    font-size: 16pt;
+  }
+
+.figmarg { 
+    margin-bottom: 2.5em;
+}
