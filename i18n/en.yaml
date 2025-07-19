@@ -29,7 +29,7 @@ footer:
   dark_appearance: "Switch to dark appearance"
   light_appearance: "Switch to light appearance"
   # powered_by: "Powered by {{ .Hugo }} &amp; {{ .Congo }}"
-  powered_by: "Powered by {{ .Hugo }}, {{ .Congo }} &amp; {{ .Venteto }}"
+  powered_by: "Powered by {{ .Hugo }}, {{ .Congo }} &amp; {{ .hongomod }}"
 
 list:
   externalurl_title: "Link to external site"

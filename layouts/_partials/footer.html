@@ -99,12 +99,12 @@
 
           {{ $congo := printf `<a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href="https://github.com/jpanther/congo" target="_blank" rel="noopener noreferrer">Congo</a>` }}
 
-          {{ $venteto := printf `<a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href="https://github.com/venteto/hugo-congo-module" target="_blank" rel="noopener noreferrer">Venteto</a>` }}
+          {{ $hongomod := printf `<a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href="https://github.com/venteto/hongomod" target="_blank" rel="noopener noreferrer">hongomod</a>` }}
 
-          {{ i18n "footer.powered_by" (dict "Hugo" $hugo "Congo" $congo "Venteto" $venteto) | safeHTML }}
+          {{ i18n "footer.powered_by" (dict "Hugo" $hugo "Congo" $congo "hongomod" $hongomod) | safeHTML }}
         
           {{ if hugo.IsProduction }}
-            <br>Last site buildDDDD: {{ time.Now.Format "Monday 2 January 2006 at 15:04 MST" }}
+            <br>Last site build: {{ time.Now.Format "Monday 2 January 2006 at 15:04 MST" }}
           {{ end }}
         </p>
       {{ end }}
