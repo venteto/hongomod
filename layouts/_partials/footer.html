@@ -76,6 +76,11 @@
       </ul>
     </nav>
   {{ end }}
+  
+  {{ if not hugo.IsProduction }}
+    {{ partial "footer-local-menu.html" . }}
+  {{ end }}
+  
   <div class="flex items-center justify-between">
     <div>
       {{/* Copyright */}}

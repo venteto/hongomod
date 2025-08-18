@@ -1,0 +1,13 @@
+# NOTE: `showName = true` is the default behavior
+
+[[reuse]]
+  name = "robots"
+  url = "/robots.txt"
+  weight = 1
+
+[[reuse]]
+  name = "favicon gen"
+  url = "https://favicon.io/favicon-generator/"
+  weight = 2
+  [reuse.params]
+    target = "_blank"
