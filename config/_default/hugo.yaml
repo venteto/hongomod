@@ -1,0 +1,23 @@
+# publishDir: ../deploy/public/
+# contentDir: ../in/content/
+# assetsDir: ../in/assets/
+# staticDir: ../in/static/
+# resourceDir: ../in/resources/
+
+
+outputs:
+  home:
+  - html
+  - json  # needed for search index to function
+
+# must be true to enable my Hongomod override of the Congo default robots.txt
+enableRobotsTXT: true
+
+taxonomies:
+  tag: tags
+
+# to use <br> inline in content files
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

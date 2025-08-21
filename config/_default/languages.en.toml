@@ -1,0 +1,8 @@
+languageCode = "en-US"
+languageName = "English (United States)"
+languageDirection = "ltr"
+weight = 1
+
+[params]
+  dateFormat = "2 January 2006"
+  # description = '.'  # for some reason this is not minified

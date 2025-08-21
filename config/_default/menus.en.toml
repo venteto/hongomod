@@ -1,5 +1,10 @@
 # NOTE: `showName = true` is the default behavior
 
+# cannot reuse [[main]] here, as even with deep merging, a menu involves
+# slicing, and Hugo does not permit that; only real option to reuse bits of the
+# main menu requires modifying a template partial
+# ------------------------------------------------------------------------------
+
 [[reuse]]
   name = "robots"
   url = "/robots.txt"
