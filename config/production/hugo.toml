@@ -1,0 +1,14 @@
+[minify]
+  minifyOutput = true
+
+  [minify.tdewolff]
+    [minify.tdewolff.html]
+      # keepComments = false
+      # keepConditionalComments = false
+      keepDefaultAttrVals = false
+      keepDocumentTags = true  # must be true for GSC verify meta tag to work (explicit <head> tag must be present)
+      keepEndTags = false
+      # keepQuotes = false
+      keepSpecialComments = false
+      # keepWhitespace = false
+      # templateDelims = ['', '']
